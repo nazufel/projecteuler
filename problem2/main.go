@@ -1,9 +1,6 @@
 package main
 
-import (
-	"fmt"
-	"strconv"
-)
+import "fmt"
 
 /*
 Question 2:
@@ -11,25 +8,25 @@ By considering the terms in the Fibonacci sequence whose values do not exceed
 four million, find the sum of the even-valued terms.
 */
 
-// Function that takes n number of ints and returns ints
-func FibonacciLoop(n int) int {
-	// make a list named f, with two values, n+1 and n+2
-	f := make([]int, n+1, n+2)
-	if n < 2 {
-		f = f[0:2]
+func workingLoop(n int) []int {
+	// make a slice of
+	fmt.Println("n var passed to workingLoop is:", n)
+	f := make([]int, 2)
+	fmt.Println(f)
+	/*if n < 2 {
+		f = f[:]
 	}
+	*/
 	f[0] = 0
 	f[1] = 1
-	for i := 2; i <= n; i++ {
-		f[i] = f[i-1] + f[i-2]
+	for n <= 100 {
+		f[n] = f[n-1] + f[n-2]
+		n++
 	}
-	return f[n]
+	return f
 }
 
 func main() {
-	// control loop to calcuate the Fibonacci numbers up to i number of passes
-	for i := 0; i <= 10; i++ {
-		fmt.Print(strconv.Itoa(FibonacciLoop(i)) + " ")
-	}
-	fmt.Println("")
+	n := 1
+	fmt.Println(workingLoop(n))
 }
