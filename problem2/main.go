@@ -2,31 +2,21 @@ package main
 
 import "fmt"
 
-/*
-Question 2:
-By considering the terms in the Fibonacci sequence whose values do not exceed
-four million, find the sum of the even-valued terms.
-*/
-
-func workingLoop(n int) []int {
-	// make a slice of
-	fmt.Println("n var passed to workingLoop is:", n)
-	f := make([]int, 2)
-	fmt.Println(f)
-	/*if n < 2 {
-		f = f[:]
+// Function using recursion to calculate Fibonacci numbers
+func fibonacciLoop(n int) int {
+	for n <= 1 {
+		return n
 	}
-	*/
-	f[0] = 0
-	f[1] = 1
-	for n <= 100 {
-		f[n] = f[n-1] + f[n-2]
-		n++
-	}
-	return f
+	return fibonacciLoop(n-1) + fibonacciLoop(n-2)
 }
 
 func main() {
-	n := 1
-	fmt.Println(workingLoop(n))
+	total := 0
+	for n := 0; n <= 33; n++ {
+		if fibonacciLoop(n)%2 == 0 {
+			fmt.Println(fibonacciLoop(n))
+			total += fibonacciLoop(n)
+			fmt.Println(total)
+		}
+	}
 }

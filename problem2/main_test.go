@@ -43,25 +43,12 @@ var fibPairs = []testFibPairs{
 	{31, 1346269},
 	{32, 2178309},
 	{33, 3524578},
-	{34, 5702887},
-	{35, 9227465},
-	{36, 14930352},
-	{37, 24157817},
-	{38, 39088169},
-	{39, 63245986},
-	{40, 102334155},
-	{41, 165580141},
-	{42, 267914296},
-	{43, 433494437},
-	{44, 701408733},
-	{45, 1134903170},
-	{46, 1836311903},
-	{47, 2971215073}, //stopped the tests at 47 cases since the Project Euler question 1 only asked for >4M
+	//stopped the tests at 33 cases since the Project Euler question 1 only asked for >4M
 }
 
-func TestFib(t *testing.T) {
+func TestFibLoop(t *testing.T) {
 	for _, pair := range fibPairs {
-		v := workingLoop(pair.term)
+		v := fibonacciLoop(pair.term)
 		if v != pair.expected {
 			t.Error(
 				"For", pair.term,
@@ -70,4 +57,9 @@ func TestFib(t *testing.T) {
 			)
 		}
 	}
+}
+
+type testEvenPairs struct {
+	term     int
+	expected int
 }
