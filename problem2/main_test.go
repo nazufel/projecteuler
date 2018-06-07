@@ -58,8 +58,3 @@ func TestFibLoop(t *testing.T) {
 		}
 	}
 }
-
-type testEvenPairs struct {
-	term     int
-	expected int
-}

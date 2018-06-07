@@ -12,11 +12,10 @@ func fibonacciLoop(n int) int {
 
 func main() {
 	total := 0
-	for n := 0; n <= 33; n++ {
+	for n := 0; fibonacciLoop(n) <= 4000000; n++ {
 		if fibonacciLoop(n)%2 == 0 {
-			fmt.Println(fibonacciLoop(n))
 			total += fibonacciLoop(n)
-			fmt.Println(total)
 		}
 	}
+	fmt.Println(total)
 }
