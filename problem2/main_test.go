@@ -43,7 +43,7 @@ var fibPairs = []testFibPairs{
 	{31, 1346269},
 	{32, 2178309},
 	{33, 3524578},
-	//stopped the tests at 33 cases since the Project Euler question 1 only asked for n < 4M
+	//stopped the tests at 33 cases since the Project Euler question 2 only asked for n < 4M
 }
 
 func TestFibLoop(t *testing.T) {
